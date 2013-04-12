@@ -1,0 +1,17 @@
+{
+    "name": "image-host",
+    "version": "0.0.0",
+    "dependencies": {
+	"http-proxy": "*",
+	"express": "*",
+	"seaport": "*",
+	"async": "*"	
+    },
+    "devDependencies": {
+	"mocha": "*",
+	"supertest": "*"
+    },
+    "scripts": {
+	"test": "mocha test.js -R spec"
+    }
+}

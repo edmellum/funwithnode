@@ -5,12 +5,28 @@
 
 <body>
 
+  <h1>Chat log</h1>
+  <ul id="chat-log">
+  </ul>
+
+  <input type="text" placeholder="Chat message goes here" />
+
+  <script src="/jquery.js"></script>
   <script src="/socket.io/socket.io.js"></script>
   <script>
+    var addLogLine = function(text) {
+      var line = $('<li>', {text: text});
+      $('#chat-log').append(line);
+    };
+
     var socket = io.connect('http://localhost');
     socket.on('news', function (data) {
       console.log(data);
       socket.emit('my other event', { my: 'data' });
+    });
+
+    socket.on('new user', function (data) {
+      addLogLine(data);
     });
   </script>
 </body>

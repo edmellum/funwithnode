@@ -63,7 +63,7 @@ describe('Chat App', function() {
       client2.emit('room', 'coolpeople');
       client1.emit('room', 'coolpeople');
 
-      client2.emit('message', {text: 'yo bro'});
+      client2.emit('message', 'yo bro');
     });
   });
 });
